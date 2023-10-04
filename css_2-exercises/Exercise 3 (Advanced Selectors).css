@@ -1,0 +1,30 @@
+h2 {font-family: sans-serif;}/*Change all h2 fonts family to sans-serif*/
+
+h1, h2, h3 {text-transform: capitalize;}/*Capitalize all headings of any level in your code*/
+
+h2+p:first-letter {font-size:x-large;}/*Change the first paragraph’s letter after any h2 to x-large*/
+
+table tr:hover {background-color: lightblue;}/*When someone hover over any of your table rows change the background color to a light color of your choice and if the cell has previous color change it also.*/
+table tr:hover td {background-color: lightcoral;}
+
+nav li {display: inline; margin-right: 20px;}/*Change the list items display of the navbar to inline*/
+
+nav li:first-child a {text-decoration: underline;color: white;}/*Change the link of the first nav item to underlined and the others without*/
+nav li:not(:first-child) a {text-decoration: none; color: white;}
+
+tbody tr:nth-child(odd) {background-color: lightblue; }/*Use nth-child to make all table’s body rows background colors alternating */
+tbody tr:nth-child(even) {background-color: lightgoldenrodyellow; }
+
+::selection {background-color: yellow }/*When someone highlights a text in your text, change the highlighting color to a color of your choice*/
+
+a:hover {cursor:pointer; }/*When someone hovers over your webpage body links (not nav) change the cursor to a pointer*/
+
+input {height:20px; }/*Change all input fields height to 20px*/
+
+input[type="text"] {border: 1px solid gray; }/*Change the border color of all inputs of type text to light gray*/
+
+input[name="message"] {height: 50px;}/*Change input of name message height to 50px;*/
+
+
+h1 {text-align: center;} /*extra*/
+footer{text-align: center; background-color: #333; color: aliceblue;}/*extra*/

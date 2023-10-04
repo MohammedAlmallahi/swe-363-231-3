@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html >
+<head>    
+    <title>form</title>
+</head>
+<body>
+
+    <h1>
+        <strong><!-- to make the line blod -->
+         employment form 
+        </strong>
+    </h1>
+
+    
+    <section id = "1"><!-- Begin section 1 -->
+        <figure> <!-- describes the image  -->
+            <img src = "images/employment form.jpeg" width="1000" alt=" Welcome page by html ">
+        </figure>
+    </section>
+
+    <section id = "2"><!-- Begin section 2 -->
+    <h4>Fill in your information and we will contact you if you are nominated to complete the rest<br> 
+        <mark>registration requirements such as:  qualifications, certificates, etc.</mark></h4>
+    </section>
+
+    <section id = "3"><!-- Begin section 3 -->
+        <form method = "post" autocomplete = "on" action="ThanksPage.html"> <!-- action is the tool to make the submit move you to the page that you want -->
+
+            <!-- for entring the First Name -->
+        <p><label>First Name:
+         <input type = "text" id = "firstName" placeholder = "First name" /> (First name)
+         </label></p>
+
+         
+        <!-- for entring the Last Name -->
+     <p><label>Last Name:
+        <input type = "text" id = "lastName" placeholder = "Last name" /> (Last name)
+     </label></p>
+
+     
+        <!-- for entring the email by using matching -->
+    <p><label>Email:
+        <input type = "email" id = "email" placeholder = "email@domain.com" required /> (email@domain.com)
+    </label></p>
+
+        <!-- for entring the Date of birth by using the calander -->
+        <p><label>Date of birth:
+            <input type = "date" />(yyyy-mm-dd)
+         </label></p>
+
+            <!-- for entring the Phone number by required way -->
+         <p><label>Phone number:
+                <input type = "tel" placeholder = "05#-###-####" pattern = "\d{3}\ +\d{3}-\d{4}" required />05#-###-####
+             </label></p>
+
+
+
+            
+       <!-- for entring the gender by use List -->
+    <p><label for = "txtList">Your gender:
+                    <input type = "text" id = "txtList" placeholder = "Select a gender" list = "gender" />
+                    <datalist id = "gender">
+                    <option value = "male">
+                    <option value = "Female">
+        </label></p>
+        </section>
+
+
+        <section id = "4"><!-- Begin section 4 -->
+                 <p>     
+                    <!-- for cretaing the clear and submit button -->
+                           <!-- it should be in the form bondry to work  -->
+                     <input type = "reset" value = "Clear" />
+                     <input type="submit" value="submit">
+                 </p>
+        </section>
+         </form>
+
+         
+    <footer><h6>&copy; 1992-2012 by Pineapple Company &amp; Associ <wbr> ates, Inc.All Rights Reserved.</h6>
+        <address>
+         Contact us at <a href = "Pineapple@Company.com">
+            Pineapple@Company.com</a>
+         </address>
+
+</footer>
+
+        </body>
+</html>

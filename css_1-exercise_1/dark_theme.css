@@ -1,0 +1,11 @@
+
+body { font-family: arial, helvetica, sans-serif;
+background-color: rgb(34, 34, 34); }
+li { font-weight: bold; color: whitesmoke ;text-align: center }
+h1 { font-size: 50px; color: whitesmoke ;font-weight: bold;text-align: center }
+h2, h4 {  color: whitesmoke ; text-align: center }
+label {  color: whitesmoke ;text-align: center }
+strong {  color: whitesmoke ;text-align: center }
+li {  color: whitesmoke ;text-align: center }
+table , thead,tbody,tr,td,th {color: whitesmoke ;  justify-content :center ; text-align: center; }
+section {text-align: center}
