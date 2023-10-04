@@ -1,5 +1,0 @@
-table th {text-transform: uppercase; }/*Change all header cells of your table to uppercase*/
-a {color: green;}/*Change all links to green color*/
-td.top {background-color: #FFD700; }/*Change all links to green color*/
-em {background-color: blue; }/*Change the background of any <em> to blue*/
-#the_most_important {text-transform: uppercase; background-color: gold;}/*Change the element with id “the_most_important” to all caps and gold background.*/
