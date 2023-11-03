@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Real-Time Weather Visualization</title>
+    <style>
+      body {
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/110/three.min.js"></script>
+    <script>
+      // Set up Three.js
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+      const renderer = new THREE.WebGLRenderer();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      document.getElementById('container').appendChild(renderer.domElement);
+
+      // Create a simple cube to represent data (you would use more complex models)
+      const geometry = new THREE.BoxGeometry();
+      const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+      const cube = new THREE.Mesh(geometry, material);
+      scene.add(cube);
+
+      // Set the camera position
+      camera.position.z = 5;
+
+      // Add lighting (optional)
+      const light = new THREE.DirectionalLight(0xffffff, 1);
+      scene.add(light);
+
+      // Fetch and update weather data every 10 seconds
+      const apiKey = 'YOUR_OPENWEATHERMAP_API_KEY';
+      const cities = ['New York', 'Los Angeles', 'London', 'Tokyo'];
+
+      function updateWeatherData() {
+        cities.forEach((city, index) => {
+          fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`)
+            .then(response => response.json())
+            .then(data => {
+              // Extract relevant weather data from the API response
+              const temperature = data.main.temp - 273.15; // Convert to Celsius
+
+              // Update cube positions or colors based on the data
+              cube.position.x = (index - cities.length / 2) * 2; // Spread cubes evenly
+              cube.position.y = temperature;
+
+              renderer.render(scene, camera);
+            })
+            .catch(error => console.error(`Failed to fetch weather data for ${city}: ${error}`));
+        });
+      }
+
+      // Update data every 10 seconds
+      setInterval(updateWeatherData, 10000);
+
+      // Initialize the first data fetch
+      updateWeatherData();
+
+      // Handle window resize
+      window.addEventListener('resize', () => {
+        const newWidth = window.innerWidth;
+        const newHeight = window.innerHeight;
+        renderer.setSize(newWidth, newHeight);
+        camera.aspect = newWidth / newHeight;
+        camera.updateProjectionMatrix();
+      });
+
+      // Render the initial scene
+      renderer.render(scene, camera);
+    </script>
+  </body>
+</html>
