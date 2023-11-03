@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Screensaver</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+    }
+    canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="screensaver"></canvas>
+
+  <script>
+    const canvas = document.getElementById("screensaver");
+    const ctx = canvas.getContext("2d");
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    let lastInteractionTime = Date.now();
+    let screensaverActive = false;
+
+    function generateRandomColor() {
+      return "#" + ((1 << 24) * Math.random() | 0).toString(16);
+    }
+
+    function generateRandomShape() {
+      const x = Math.random() * canvas.width;
+      const y = Math.random() * canvas.height;
+      const size = 20;
+      const color = generateRandomColor();
+      ctx.fillStyle = color;
+      
+      // Randomly choose to draw "X" or "O"
+      if (Math.random() < 0.5) {
+        // Draw an "X"
+        ctx.font = `${size}px sans-serif`;
+        ctx.fillText("X", x, y);
+      } else {
+        // Draw an "O"
+        ctx.beginPath();
+        ctx.arc(x, y, size, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+
+    function activateScreensaver() {
+      screensaverActive = true;
+      canvas.style.display = "block";
+      canvas.style.background = "black";
+      requestAnimationFrame(draw);
+    }
+
+    function deactivateScreensaver() {
+      screensaverActive = false;
+      canvas.style.display = "none";
+      canvas.style.background = "none";
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }
+
+    function draw() {
+      if (screensaverActive) {
+        generateRandomShape();
+        requestAnimationFrame(draw);
+      }
+    }
+
+    function checkForInactivity() {
+      const currentTime = Date.now();
+      const inactivityDuration = (currentTime - lastInteractionTime) / 1000;
+      if (inactivityDuration >= 10) { // Change the inactivity duration to 10 seconds
+        activateScreensaver();
+      } else {
+        deactivateScreensaver();
+      }
+    }
+
+    document.addEventListener("mousemove", () => {
+      lastInteractionTime = Date.now();
+      deactivateScreensaver();
+    });
+
+    setInterval(checkForInactivity, 1000); // Check for inactivity every second
+  </script>
+</body>
+</html>
