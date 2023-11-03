@@ -1,0 +1,2 @@
+for Ex2 go to  my-sample-website then src then , you will see App , Header , Lessons and footer 
+those are the file I mead it   
