@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html dir='rtl'>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About me</title>
+    <link rel="stylesheet" href="Ex1.css">
+
+</head>
+<body>
+    <header>
+        <nav>
+            <d><img src="images/logo.webp" width="65" height="65" alt="Welcome page by html"></d>
+            <c>
+                <h4>Md</h4>
+                <ul>
+                    <div class="navbar">
+                        <div class="hamburger" id="hamburger">
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                        </div>
+                        <ul class="nav-items" id="nav-items">
+                            <li><a href="home-ar.html">الصفحة الرئيسية</a></li>
+                            <li><a href="About me-ar.html">عني</a></li>
+                            <li><a href="Skills-ar.html">مهاراتي</a></li>
+                            <li><a href="Contact us-ar.html">تواصل معي</a></li>
+                        </ul>
+                    </div>
+                </ul>
+            </c>
+        </nav>
+    </header>
+    
+    <p>
+        <h5>عني</h5>
+    </p>
+    
+    <div id="dynamic-content">
+
+    </div>
+
+    <footer>
+        <p>&copy; 2023 شركتنا. كل الحقوق محفوظة.</p>
+    </footer>
+    
+
+    <script>
+        const dataList = [
+    {
+      title: "المشروع الاول",
+      content: "محتوى المقالة الأولى",
+      imageUrl:"",
+    },
+    {
+      title: "المشروع الثاني ",
+      content: "محتوى المقالة الثانية",
+      imageUrl: "images/971.jpg",
+    },
+    // Add more objects as needed
+  ];
+
+  function addDynamicContent() {
+    const dynamicContentElement = document.getElementById("dynamic-content");
+  
+    dataList.forEach(item => {
+      const article = document.createElement("article");
+      const title = document.createElement("h1");
+      title.textContent = item.title;
+      const content = document.createElement("h2");
+      content.textContent = item.content;
+      const image = document.createElement("img");
+      image.src = item.imageUrl;
+      image.style.width = "200px";
+      article.style.textAlign = "center";
+      article.appendChild(title);
+      article.appendChild(content);
+      article.appendChild(image);
+      dynamicContentElement.appendChild(article);
+    });
+  }
+  
+  addDynamicContent();
+      </script>
+
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+</body>
+</html>
