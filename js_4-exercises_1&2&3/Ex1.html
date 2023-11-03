@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html dir='en'>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lessons</title>
+    <link rel="stylesheet" href="Ex1.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <d><img src="images/logo.webp" width="65" height="65" alt="Welcome page by HTML"></d>
+            <c>
+                <h4>Md</h4>
+                <ul>
+                    <div class="navbar">
+                        <div class="hamburger" id="hamburger">
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                        </div>
+                        <ul class="nav-items" id="nav-items">
+                            <li><a href="home-ar.html">Home</a></li>
+                            <li><a href="About me-ar.html">Lessons</a></li>
+                            <li><a href="Contact us-ar.html">contact with me</a></li>
+                        </ul>
+                    </div>
+                </ul>
+            </c>
+        </nav>
+    </header>
+    
+    <p>
+        <h5>Lessons</h5>
+    </p>
+    
+    <div id="lesson-list"></div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2023 OurCompany. All rights reserved</p>
+    </footer>
+    
+    <script>
+      class Lesson {
+        constructor(title, content, url) {
+          this.title = title;
+          this.content = content;
+          this.url = url;
+        }
+      }
+
+      const lessons = [
+        new Lesson("TypingClub", "If you want to type quickly on your keyboard, TypingClub website is the best website that will meet your needs. Click on TypingClub to start learning.", "https://www.typingclub.com/sportal/program-3.game"),
+        new Lesson("Readtheory", "If you want to develop your reading in the English language, Readtheory is the ideal site. It will conduct a test for you to determine your level, then it will show you scientific texts based on your level. It will then present you with some questions to test your understanding, Click on Readtheory to start learning.", "https://translate.google.com.sa/?hl=ar&sl=en&tl=ar&op=translate"),
+        new Lesson("Translater", "One of the most famous sites for literally translating speech from one language to another, but beware! Sometimes it makes mistakes in translating words correctly, Click on GoogleTranslate to start translating.", "https://translate.google.com.sa/?hl=ar&sl=en&tl=ar&op=translate"),
+      ];
+
+      function displayLessons() {
+        const lessonList = document.getElementById("lesson-list");
+
+        lessonList.innerHTML = "";
+
+        lessons.forEach((lesson) => {
+          const listItem = document.createElement("h1");
+          const link = document.createElement("a");
+          link.href = lesson.url;
+          link.innerHTML = `<h1><li>${lesson.title}</li></h21>`;
+          listItem.appendChild(link);
+          listItem.innerHTML += `<h2>${lesson.content}</h2>`;
+          lessonList.appendChild(listItem);
+        });
+      }
+
+      displayLessons();
+    </script>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+</body>
+</html>
