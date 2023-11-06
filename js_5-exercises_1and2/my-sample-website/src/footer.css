@@ -1,0 +1,14 @@
+
+
+    footer{
+        line-height: 0px ;
+        text-align: center;
+        background:rgba(50, 50, 50, 0.70);
+        color: aliceblue;
+        width:100%;
+        position:fixed;
+        bottom:0;
+        left:0;
+        }
+
+    
