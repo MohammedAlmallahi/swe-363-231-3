@@ -48,7 +48,7 @@ h1{
     font-size: 64px;
     font-style: normal;
     font-weight: 700px;
-    line-height: 70px; /* 109.375% */
+    line-height: 70px; 
     letter-spacing: -0.5px;  
     margin-left: -200px;
 }
@@ -60,7 +60,7 @@ h2{
     font-size: 24px;
     font-style: normal;
     font-weight: 600;
-    line-height: 36px; /* 150% */
+    line-height: 36px; 
     letter-spacing: -0.5px;
     width: 824px;  
     display:flex;
@@ -140,7 +140,6 @@ d{
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-/* Initially hide the nav items */
 .nav-items {
     display: none;
     list-style: none;
@@ -151,7 +150,6 @@ d{
 
 }
 
-/* Delayed display of nav items when hovering over the hamburger */
 #hamburger:hover + #nav-items,
 #nav-items:hover {
     display: list-item;
@@ -176,20 +174,19 @@ d{
     left: 0;
     width: 100%;
     height: 100%;
-    background:radial-gradient(50% 50% at 50% 50%, rgba(26, 21, 21, 0.00) 0%, rgba(1, 1, 1, 0.16) 100%), #FFF; /* Set loader background color */
-    display: flex;
+    background:radial-gradient(50% 50% at 50% 50%, rgba(26, 21, 21, 0.00) 0%, rgba(1, 1, 1, 0.16) 100%), #FFF; 
     align-items: center;
     justify-content: center;
-    z-index: 1000; /* Set a higher z-index to make sure it's on top */
+    z-index: 1000; 
 }
 
 .loader {
-    border: 8px solid #f3f3f3; /* Light gray */
-    border-top: 8px solid #000; /* Black */
+    border: 8px solid #f3f3f3; 
+    border-top: 8px solid #000; 
     border-radius: 50%;
     width: 50px;
     height: 50px;
-    animation: spin 1s linear infinite; /* Apply rotation animation */
+    animation: spin 1s linear infinite; 
 }
 
 @keyframes spin {
