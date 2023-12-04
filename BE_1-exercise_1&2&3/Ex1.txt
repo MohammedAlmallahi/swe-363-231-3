@@ -1,0 +1,20 @@
+What is the url ?
+https://readtheory.org/app/student/dashboard
+
+
+What is the IP address of the server host?
+13.225.78.43:443
+
+How many http(s) request were made?
+≈204
+
+
+What are the different types returned from all of the requests?
+GET & POST & OPTIONS
+
+
+What was the largest file returned?
+google-analytics.com
+
+How many ms did it take?
+119 ms

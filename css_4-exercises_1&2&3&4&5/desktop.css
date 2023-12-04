@@ -26,10 +26,13 @@ nav{
     text-decoration:none
     }
     
+@media screen and (min-width: 769px) {
     
+        c li {
+            display: inline;
+            margin-right: 30px;
+        }  
     
-    c li {display: inline; margin-right: 30px;;
-    }
     
     c li :hover{
         color: black;
@@ -53,11 +56,11 @@ nav{
         flex-shrink: 0;
         color: #000;
         font-family: Montserrat;
-        font-size: 22px;
+        font-size: 30px;
         font-style: normal;
         font-weight: 700;
         line-height: normal;
-        letter-spacing: 4.078px;
+        letter-spacing: 5.561px;
         text-align: center;  
         margin-top: 7%;
     }
@@ -68,47 +71,51 @@ nav{
         width: 431px;
         height: 104px;
         flex-shrink: 0; 
+        text-align: justify;
+        font-family: Open Sans;
         font-size: 14px;
         font-style: normal;
         font-weight: 300;
+        line-height: top;
         text-align: center;  
-        margin-top: 1%;
+        margin-top: 4%;
+
+ 
     }
     
 
     h4{
-         line-height: 0px ; 
-         display: inline;
-         font-size: 32px;
-         color:aliceblue;
-         margin-left: 10px;
-         float: left;
-    } 
+        line-height: 0 ; 
+        display: inline;
+        font-size: 32px;
+        color:aliceblue;
+        margin-left: 10px;
+        float: left;
+   } 
+}
 
-    h5{
+   h5{
 
-        margin: auto; 
-        margin-top: 20vh;
-        width: 404px;
-        height: 107px;
-        flex-shrink: 0;
-        border: 8px solid #000;
-        background: rgba(255, 255, 255, 0.00);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        flex-shrink: 0;
-        color: #000;
-        text-align: center;
-        font-family: Montserrat;
-        font-size: 30px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: 127.9%; 
-        letter-spacing: 10.661px;
-    }
-        
-    
+       margin: auto; 
+       margin-top: 20vh;
+       width: 404px;
+       height: 107px;
+       flex-shrink: 0;
+       border: 8px solid #000;
+       background: rgba(255, 255, 255, 0.00);
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       flex-shrink: 0;
+       color: #000;
+       text-align: center;
+       font-family: Montserrat;
+       font-size: 30px;
+       font-style: normal;
+       font-weight: 700;
+       line-height: 127.9%; 
+       letter-spacing: 10.661px;
+   }
 
 
     d{
@@ -118,22 +125,23 @@ nav{
         float: left;
         margin-left: 60px;
         margin-top: 5px;
+
             
         
         
     }
-    .img-with-text {
-        text-align: center;
-        width: [width of img]
-        ;
+
+    img{
+
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;  
+        margin-top: 7%;    
     }
     
-    .img-with-text img {
-        display: block;
-        margin: 0 auto;
-    }
-
-    .hamburger {
+.hamburger {
         display: flex;
         flex-direction: column;
         cursor: pointer;
@@ -141,7 +149,7 @@ nav{
         margin-right: 10px;
     }
     
-    .bar {
+.bar {
         width: 25px;
         height: 3px;
         background-color: aliceblue;
@@ -149,7 +157,7 @@ nav{
         transition: transform 0.3s ease, opacity 0.3s ease;
     }
     
-    .nav-items {
+.nav-items {
         display: none;
         list-style: none;
         padding: 0;
@@ -175,20 +183,20 @@ nav{
     #hamburger:hover .bar:nth-child(3) {
         transform: translateY(-7px) rotate(45deg);
     }
-    
+
     .loader-wrapper {
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background:radial-gradient(50% 50% at 50% 50%, rgba(26, 21, 21, 0.00) 0%, rgba(1, 1, 1, 0.16) 100%), #FFF; 
+        background:radial-gradient(50% 50% at 50% 50%, rgba(26, 21, 21, 0.00) 0%, rgba(1, 1, 1, 0.16) 100%), #FFF; /* Set loader background color */
         display: flex;
         align-items: center;
         justify-content: center;
         z-index: 1000; 
     }
-    
+
     .loader {
         border: 8px solid #f3f3f3; 
         border-top: 8px solid #000; 
@@ -197,18 +205,31 @@ nav{
         height: 50px;
         animation: spin 1s linear infinite; 
     }
-    
+
     @keyframes spin {
         0% { transform: rotate(0deg); }
         100% { transform: rotate(360deg); }
     }
     
-    
+
+    .watermark {
+        opacity: 0.1;
+
+    }
+
+
+    .date {
+        text-align: center;
+        font-size: 14px;
+        color: #888; 
+    }
+
+
     footer{
         line-height: 0px ;
         text-align: center;
         background:rgba(50, 50, 50, 0.70);
-        color: aliceblue;
+        color: rgb(150, 187, 220);
         width:100%;
         position:fixed;
         bottom:0;

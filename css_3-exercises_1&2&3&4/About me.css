@@ -1,5 +1,4 @@
 nav{
-    margin: 0px;
     position: fixed;
     height: 80px;
     width: 100%;
@@ -8,12 +7,12 @@ nav{
     background:rgba(50, 50, 50, 0.70);
     color: aliceblue;
     backdrop-filter: blur(10px);  
-    line-height: 50px;
+    line-height: -10%;
     text-align: right;
     top: 0;
     right: 0;
     overflow: hidden;
-
+    display: block ;
     }
     
     
@@ -127,13 +126,81 @@ nav{
         
     }
     
-       
+.hamburger {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        padding: 10px;
+        margin-right: 10px;
+    }
     
+.bar {
+        width: 25px;
+        height: 3px;
+        background-color: aliceblue;
+        margin: 3px 0;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    
+.nav-items {
+        display: none;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        margin-right: 45px;
+        margin-top: -30px;
+
+    }
+    
+    #hamburger:hover + #nav-items,
+    #nav-items:hover {
+        display: list-item;
+    }
+    
+    #hamburger:hover .bar:nth-child(1) {
+        transform: translateY(7px) rotate(-45deg);
+    }
+    
+    #hamburger:hover .bar:nth-child(2) {
+        opacity: 0;
+    }
+    
+    #hamburger:hover .bar:nth-child(3) {
+        transform: translateY(-7px) rotate(45deg);
+    }
+
+    .loader-wrapper {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background:radial-gradient(50% 50% at 50% 50%, rgba(26, 21, 21, 0.00) 0%, rgba(1, 1, 1, 0.16) 100%), #FFF; 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000; 
+    }
+
+    .loader {
+        border: 8px solid #f3f3f3; 
+        border-top: 8px solid #000; 
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        animation: spin 1s linear infinite; 
+    }
+
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+
     footer{
         line-height: 0px ;
         text-align: center;
         background:rgba(50, 50, 50, 0.70);
-        color: aliceblue;
+        color: rgb(150, 187, 220);
         width:100%;
         position:fixed;
         bottom:0;

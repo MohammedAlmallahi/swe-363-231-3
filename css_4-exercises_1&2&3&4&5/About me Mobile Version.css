@@ -23,17 +23,30 @@ nav{
     font-style: normal;
     font-weight: 700;
     letter-spacing: -0.5px;
-    text-decoration:none
+    text-decoration:none;
+
     }
     
+    @media only screen and (max-width: 600px) {
+  
+    nav {
+        height: 60px;
+        text-align: right;
+        line-height: 12px ; 
+        left: 80px;
+
+    }   
     
-    
-    c li {display: inline; margin-right: 30px;;
-    }
+    c li {display: inline; 
+        margin-right: 15px;
+        text-align: right;
+        padding-right: 0%;
+        
+     }
     
     c li :hover{
         color: black;
-        text-decoration: underline;
+
      }
     
     body {
@@ -53,11 +66,11 @@ nav{
         flex-shrink: 0;
         color: #000;
         font-family: Montserrat;
-        font-size: 22px;
+        font-size: 30px;
         font-style: normal;
         font-weight: 700;
         line-height: normal;
-        letter-spacing: 4.078px;
+        letter-spacing: 5.561px;
         text-align: center;  
         margin-top: 7%;
     }
@@ -68,114 +81,74 @@ nav{
         width: 431px;
         height: 104px;
         flex-shrink: 0; 
+        text-align: justify;
+        font-family: Open Sans;
         font-size: 14px;
         font-style: normal;
         font-weight: 300;
+        line-height: top;
         text-align: center;  
-        margin-top: 1%;
+        margin-top: 4%;
+
+ 
     }
     
 
     h4{
-         line-height: 0px ; 
-         display: inline;
-         font-size: 32px;
-         color:aliceblue;
-         margin-left: 10px;
-         float: left;
-    } 
+        line-height: 1px ; 
+        display: inline;
+        font-size: 24px;
+        color:aliceblue;
+        margin-left: 10px;
+        float: left;
+   } 
 
-    h5{
 
-        margin: auto; 
-        margin-top: 20vh;
-        width: 404px;
-        height: 107px;
-        flex-shrink: 0;
-        border: 8px solid #000;
-        background: rgba(255, 255, 255, 0.00);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        flex-shrink: 0;
-        color: #000;
-        text-align: center;
-        font-family: Montserrat;
-        font-size: 30px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: 127.9%; 
-        letter-spacing: 10.661px;
-    }
-        
-    
+   h5{
+
+       margin: auto; 
+       margin-top: 20vh;
+       width: 404px;
+       height: 107px;
+       flex-shrink: 0;
+       border: 8px solid #000;
+       background: rgba(255, 255, 255, 0.00);
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       flex-shrink: 0;
+       color: #000;
+       text-align: center;
+       font-family: Montserrat;
+       font-size: 30px;
+       font-style: normal;
+       font-weight: 700;
+       line-height: 127.9%; 
+       letter-spacing: 10.661px;
+   }
 
 
     d{
-        bottom: 100px; 
-        border-radius: 400px;
+        border-radius: 100px;
         background: url(C:\Users\Xxham\Desktop\swe363loucale\css3\work-illu-tall-bluastro.jpg), lightgray 50% / cover no-repeat, #494949;
         float: left;
-        margin-left: 60px;
-        margin-top: 5px;
-            
+        margin-left: 5px;
+        margin-bottom: 5px;            
         
         
-    }
-    .img-with-text {
-        text-align: center;
-        width: [width of img]
-        ;
-    }
-    
-    .img-with-text img {
-        display: block;
-        margin: 0 auto;
     }
 
-    .hamburger {
+    img{
+
+        margin: auto;
         display: flex;
         flex-direction: column;
-        cursor: pointer;
-        padding: 10px;
-        margin-right: 10px;
+        justify-content: center;
+        text-align: center;  
     }
     
-    .bar {
-        width: 25px;
-        height: 3px;
-        background-color: aliceblue;
-        margin: 3px 0;
-        transition: transform 0.3s ease, opacity 0.3s ease;
-    }
-    
-    .nav-items {
-        display: none;
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        margin-right: 45px;
-        margin-top: -30px;
 
-    }
-    
-    #hamburger:hover + #nav-items,
-    #nav-items:hover {
-        display: list-item;
-    }
-    
-    #hamburger:hover .bar:nth-child(1) {
-        transform: translateY(7px) rotate(-45deg);
-    }
-    
-    #hamburger:hover .bar:nth-child(2) {
-        opacity: 0;
-    }
-    
-    #hamburger:hover .bar:nth-child(3) {
-        transform: translateY(-7px) rotate(45deg);
-    }
-    
+
     .loader-wrapper {
         position: fixed;
         top: 0;
@@ -188,7 +161,7 @@ nav{
         justify-content: center;
         z-index: 1000; 
     }
-    
+
     .loader {
         border: 8px solid #f3f3f3; 
         border-top: 8px solid #000; 
@@ -197,13 +170,26 @@ nav{
         height: 50px;
         animation: spin 1s linear infinite; 
     }
-    
+
     @keyframes spin {
         0% { transform: rotate(0deg); }
         100% { transform: rotate(360deg); }
     }
-    
-    
+
+
+    .watermark {
+        opacity: 0.1;
+
+    }
+
+
+    .date {
+        text-align: center;
+        font-size: 14px;
+        color: #888; 
+    }
+
+
     footer{
         line-height: 0px ;
         text-align: center;
@@ -215,4 +201,4 @@ nav{
         left:0;
         }
 
-    
+    }

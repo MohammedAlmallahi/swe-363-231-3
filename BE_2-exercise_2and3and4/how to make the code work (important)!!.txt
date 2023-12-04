@@ -1,0 +1,17 @@
+Ex2 ==> Exercise 2 (File System)
+the "source_directory" is folder I created and it has some .txt and .csv...ets files 
+pass this code in the TERMINAL to make it work :node Ex2.js source_directory target_directory
+the "target_directory" (you can change its name) is a folder that will contain the new files that were copied from the original file 
+
+
+
+
+Ex3.js ==> Exercise 3 (Chatbot)
+pass this code in the TERMINAL to make it work :node Ex3.js
+and you can ask it one of the سuggested questions like..."How tall is the Eiffel Tower?" 
+
+
+
+Ex4main.js & Ex4userSimulation.js & Ex4eventEmitter.js ==> Exercise 4 (Events)
+pass this code in the TERMINAL to make it work :node Ex4main.js
+and it will simulate the user logged in & logged out 
