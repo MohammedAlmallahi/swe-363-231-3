@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe Game</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: sans-serif;
+        }
+
+        .cell {
+            font-size: larger;
+            font-weight: bolder;
+            background-color: beige;
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .cell:hover {
+            background-color: blanchedalmond;
+        }
+
+        .row {
+            display: flex;
+        }
+
+        #inner {
+            width: 50px;
+            height: 50px;
+            background-color: blue;
+        }
+
+        .winner {
+            background-color: greenyellow;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="turn">Now it's <span>X</span>'s turn</h1>
+    <!-- Board -->
+    <div class="board">
+        <div class="row">
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+        </div>
+        <div class="row">
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+        </div>
+        <div class="row">
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+        </div>
+    </div>
+
+    <script>
+        // Variables
+        let turn = "X";
+        let gameModel = ["", "", "", "", "", "", "", "", ""];
+        let gameOver = false;
+
+        // Event listeners for the cells
+        const cells = document.querySelectorAll(".cell");
+        cells.forEach(cell => cell.addEventListener("click", cellClicked));
+
+        // Event handler for cell click
+        function cellClicked(event) {
+            const cell = event.target;
+
+            // If the cell is empty and the game is not over
+            if (cell.innerHTML === "" && !gameOver) {
+                // Add the letter
+                cell.innerHTML = turn;
+                const index = Array.from(cells).indexOf(cell);
+
+                // Update game model
+                gameModel[index] = turn;
+
+                // Check for a winner
+                if (checkWinner()) {
+                    document.querySelector("#turn").innerHTML = `Player ${turn} wins!`;
+                    gameOver = true;
+                    markWinningCells();
+                } else {
+                    // Switch turns
+                    turn = turn === "X" ? "O" : "X";
+                    // Change title
+                    document.querySelector("#turn span").innerHTML = turn;
+                    // Check for a draw
+                    if (gameModel.every(cell => cell !== "")) {
+                        document.querySelector("#turn").innerHTML = "Draw!";
+                        gameOver = true;
+                    }
+                }
+            }
+        }
+
+        // Check for a winner
+        function checkWinner() {
+            const winPatterns = [
+                [0, 1, 2],
+                [3, 4, 5],
+                [6, 7, 8],
+                [0, 3, 6],
+                [1, 4, 7],
+                [2, 5, 8],
+                [0, 4, 8],
+                [2, 4, 6]
+            ];
+
+            for (const pattern of winPatterns) {
+                const [a, b, c] = pattern;
+                if (gameModel[a] && gameModel[a] === gameModel[b] && gameModel[a] === gameModel[c]) {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        // Mark winning cells
+        function markWinningCells() {
+            const winPatterns = [
+                [0, 1, 2],
+                [3, 4, 5],
+                [6, 7, 8],
+                [0, 3, 6],
+                [1, 4, 7],
+                [2, 5, 8],
+                [0, 4, 8],
+                [2, 4, 6]
+            ];
+
+            for (const pattern of winPatterns) {
+                const [a, b, c] = pattern;
+                if (gameModel[a] && gameModel[a] === gameModel[b] && gameModel[a] === gameModel[c]) {
+                    cells[a].classList.add("winner");
+                    cells[b].classList.add("winner");
+                    cells[c].classList.add("winner");
+                    break;
+                }
+            }
+        }
+
+        // Reset button
+        const resetButton = document.createElement("button");
+        resetButton.textContent = "Reset";
+        resetButton.addEventListener("click", resetGame);
+        document.body.appendChild(resetButton);
+
+        // Reset the game
+        function resetGame() {
+            gameModel = ["", "", "", "", "", "", "", "", ""];
+            cells.forEach(cell => {
+                cell.innerHTML = "";
+                cell.classList.remove("winner");
+            });
+            gameOver = false;
+            turn = "X";
+            document.querySelector("#turn").innerHTML = "Now it's <span>X</span>'s turn";
+        }
+    </script>
+</body>
+
+</html>
